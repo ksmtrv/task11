@@ -6,8 +6,8 @@ public class Main {
 
     public static void main(String[] args) {
         String text = readSomething();
-        StringBuilder finalText = getLengthWords(text);
-        printSomething(finalText);
+        StringBuilder resultText = getLengthWords(text);
+        printSomething(resultText);
     }
 
     private static String readSomething() {
@@ -16,23 +16,23 @@ public class Main {
         return scanner.nextLine();
     }
 
-    private static void printSomething(StringBuilder finalText) {
-        System.out.println("The final text: " + finalText);
+    private static void printSomething(StringBuilder resultText) {
+        System.out.println("The final text: " + resultText);
     }
 
     private static StringBuilder getLengthWords(String text) {
-        StringBuilder finalText = new StringBuilder();
+        StringBuilder resultText = new StringBuilder();
         String[] words = text.split("[ \\-#:;$]");
 
         int length = 0;
         for (int i = 0; i < words.length; i++) {
             length += words[i].length();
-            finalText.append(words[i]).append("(").append(words[i].length()).append(")");
+            resultText.append(words[i]).append("(").append(words[i].length()).append(")");
 
             if (i + 1 < words.length) {
-                finalText.append(text.charAt(length + i));
+                resultText.append(text.charAt(length + i));
             }
         }
-        return finalText;
+        return resultText;
     }
 }
