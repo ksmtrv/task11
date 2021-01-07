@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        int number = readSomething();
+        int number = readSomething("the number of the file you want to open: ");
 
         String text = readFile(number);
         StringBuilder resultText = getLengthWords(text);
@@ -17,9 +17,9 @@ public class Main {
         printSomething(text, resultText);
     }
 
-    private static int readSomething() {
+    private static int readSomething(String name) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the number of the file you want to open: ");
+        System.out.printf("Enter %s ", name);
         return scanner.nextInt();
     }
 
